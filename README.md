@@ -1,6 +1,6 @@
 The project name is Combination of demonstrations using ICL.
 
-Here, we are implementing an approach by using a pair of examples for prediction aiming to improve gew-shot in-context learning by selecting compatible example pairs.
+Here, we are implementing an approach by using a pair of examples for prediction aiming to improve few-shot in-context learning by selecting compatible example pairs.
 
 Here's a detailed breakdown of the steps:
 
