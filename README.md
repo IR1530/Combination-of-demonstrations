@@ -23,8 +23,6 @@ The total number of pairs will be k choose 2.
 4.Compatibility Labeling:
 
 For each pair (zi, zj), determine their compatibility based on their one-shot prediction and two-shot prediction results.
-If both zi and zj led to correct predictions (both 1s) or both led to incorrect predictions (both 0s), label the pair as compatible (1).
-If one led to a correct prediction and the other to an incorrect prediction, label the pair as incompatible (0).
 
 5.Training Data Creation:
 
