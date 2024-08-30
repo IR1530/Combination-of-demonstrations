@@ -10,7 +10,7 @@ def run_script(script_path):
         sys.exit(1)
 
 def main():
-    # Base directory (assuming this script is in the base directory)
+    # Base directory
     base_dir = os.path.dirname(os.path.abspath(__file__))
 
     # List your scripts in the order you want them to run
