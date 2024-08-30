@@ -25,7 +25,7 @@ This dissertation introduces a novel pair-wise compatibility approach for enhanc
 
 ## Usage
 To run all the experiment:
-'''bash
+```bash
 python run_all.py
-
-The above code will run all the python code required for this experiment.
+```
+This script will execute the baseline, Rubin's approach, and our approach sequentially.
