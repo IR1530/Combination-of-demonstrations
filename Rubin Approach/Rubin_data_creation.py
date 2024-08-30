@@ -37,15 +37,6 @@ def generate_pairs_baseline(sentence_model, query, neighbors):
     sorted_pairs = sorted(scores, key=lambda x: x[1], reverse=True)
     return sorted_pairs
 
-def generate_pairs_approach2(query, neighbors, trained_sentence_model_path):
-  pairs = list(combinations(neighbors, 2))
-  model = SentenceTransformer(trained_sentence_model_path)
-  tokenizer = model.tokenizer
-  scores = []
-  for pair in pairs:
-    break
-  return None
-
 def get_top_k_examples(num_examples,sentence_model,query,sorted_pairs):
 
   if num_examples == 1:
