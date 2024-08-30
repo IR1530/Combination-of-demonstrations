@@ -105,7 +105,6 @@ def baseline(test_data, train_data, sentence_model, llama_model, llama_tokenizer
         sorted_pairs = generate_pairs_baseline(sentence_model, query, neighbors)
         selected_examples = get_top_k_examples(num_examples,sentence_model,query,sorted_pairs)
 
-        ## fix this: ASK ISHAN
         top_score = sorted_pairs[0][1]  # Score of the top pair
 
         # Get sentiments for selected examples
@@ -134,9 +133,6 @@ def baseline(test_data, train_data, sentence_model, llama_model, llama_tokenizer
 
         all_preds.append(pred)
         all_labels.append(row['prediction'])
-
-        # if idx == 100:
-        #     break
 
     return pd.DataFrame(results), all_preds, all_labels
 
