@@ -40,15 +40,6 @@ def generate_pairs_baseline(sentence_model, query, neighbors):
     sorted_pairs = sorted(scores, key=lambda x: x[1], reverse=True)
     return sorted_pairs
 
-def generate_pairs_approach2(query, neighbors, trained_sentence_model_path):
-  pairs = list(combinations(neighbors, 2))
-  model = SentenceTransformer(trained_sentence_model_path)
-  tokenizer = model.tokenizer
-  scores = []
-  for pair in pairs:
-    break
-  return None
-
 def get_top_k_examples(num_examples,sentence_model,query,sorted_pairs):
 
   if num_examples == 1:
@@ -115,7 +106,6 @@ def baseline(test_data, train_data, sentence_model, llama_model, llama_tokenizer
         sorted_pairs = generate_pairs_baseline(sentence_model, query, neighbors)
         selected_examples = get_top_k_examples(num_examples,sentence_model,query,sorted_pairs)
 
-        ## fix this: ASK ISHAN
         top_score = sorted_pairs[0][1]  # Score of the top pair
 
         # Get sentiments for selected examples
@@ -144,9 +134,6 @@ def baseline(test_data, train_data, sentence_model, llama_model, llama_tokenizer
 
         all_preds.append(pred)
         all_labels.append(row['prediction'])
-
-        #if idx == 10:
-            #break
 
     return pd.DataFrame(results), all_preds, all_labels
 
@@ -204,20 +191,3 @@ for num_examples in num_examples_list:
     # Calculate and print accuracy
     accuracy = sum(p == l for p, l in zip(all_preds, all_labels)) / len(all_labels)
     print(f"Accuracy (Baseline, top-{num_examples}): {accuracy:.4f}")
-
-# Create line plot
-plt.figure(figsize=(10, 6))
-metrics_names = ['Precision', 'Recall', 'F1-score']
-colors = ['g', 'r', 'b']
-
-for i, metric_name in enumerate(metrics_names):
-    values = [m[i] for m in metrics]
-    plt.plot(num_examples_list, values, marker='o', label=metric_name, color=colors[i])
-
-plt.xlabel('Number of Examples')
-plt.ylabel('Score')
-plt.title('Classification Metrics vs Number of Examples')
-plt.legend()
-plt.grid(True)
-plt.ylim(0, 1)  # Set y-axis limits from 0 to 1
-plt.show()
