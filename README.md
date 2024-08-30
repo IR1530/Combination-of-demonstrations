@@ -15,3 +15,17 @@ This dissertation introduces a novel pair-wise compatibility approach for enhanc
 ## Models Used
 - **Sentence Transformer**: `'all-MiniLM-L6-v2'`
 - **LLaMA-2**: 7B parameters
+
+## Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/prompt-retrieval-dissertation.git
+   cd prompt-retrieval-dissertation
+
+## Usage
+To run all the experiment:
+'''bash
+python run_all.py
+
+The above code will run all the python code required for this experiment.
