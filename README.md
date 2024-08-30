@@ -20,8 +20,12 @@ This dissertation introduces a novel pair-wise compatibility approach for enhanc
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/prompt-retrieval-dissertation.git
-   cd prompt-retrieval-dissertation
+   git clone https://github.com/yourusername/Combination-of-demonstrations.git
+   cd Combination-of-demonstrations
+
+2. Install all the dependencies
+   ```bash
+   pip install -r requirements.txt
 
 ## Usage
 To run all the experiment:
